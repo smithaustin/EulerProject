@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="author" content="Colin Hughes" />
+<meta name="description" content="A website dedicated to the fascinating world of mathematics and programming" />
+<meta name="keywords" content="programming,mathematics,problems,puzzles" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Problem 18 - Project Euler</title>
+<link rel="shortcut icon" href="favicon.ico" />
+<link rel="stylesheet" type="text/css" href="themes/20191019/style_main.css" />
+<link rel="stylesheet" type="text/css" href="themes/20191019/style_default.css" />
+<script type="text/x-mathjax-config">
+   MathJax.Hub.Config({
+      jax: ["input/TeX", "output/HTML-CSS"],
+      tex2jax: {
+         inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+         displayMath: [ ["$$","$$"], ["\\[","\\]"] ],
+         processEscapes: true
+      },
+      "HTML-CSS": { availableFonts: ["TeX"] }
+   });
+</script>
+<script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-AMS_HTML-full,Safe"></script></head>
+
+<body>
+
+
+<div id="container">
+<div id="header" class="noprint">
+   <img src="themes/20191019/logo_default.png" alt="" />
+<div id="info_panel">Logged in as <strong>austinsmith</strong><br>Sat, 7 Dec 2019, 02:51<br><a href="search"><img src="images/icon_search.png" alt="Search Problems" title="Search Problems" /></a><a href="rss2_euler.xml"><img src="images/icon_rss.png" alt="RSS Feed" title="RSS Feed" /></a></div></div>
+<div class="noprint">
+<div id="navigation" class="nav">
+<a href="about" title="About"  accesskey="h">About</a>
+<a href="archives" title="Archives"  id="current" accesskey="1">Archives</a>
+<a href="recent" title="Recent"  accesskey="2">Recent</a>
+<a href="progress" title="Progress"  accesskey="3">Progress</a>
+<a href="account" title="Account"  accesskey="4"><span Id="highlight">Account</span></a>
+<a href="news" title="News"  accesskey="5">News</a>
+<a href="friends" title="Friends"  accesskey="6">Friends</a>
+<a href="statistics" title="Statistics"  accesskey="7">Statistics</a>
+<a href="sign_out=25fde6fae748e0ea50c591a2ed26fce96d8b30b7" title="Sign Out"  accesskey="8">Sign Out</a>
+   <a href="javascript:void(0);" class="hamburger" onclick="toggle_menu_collapse()" id="hamburger">
+         <div class="bar"></div>
+         <div class="bar"></div>
+         <div class="bar"></div>
+   </a>
+
+</div>
+</div>
+
+
+
+<div id="content">
+
+<table id="show_problem_table" class="noprint">
+<tr>
+<td><div id="previous_problem"><a href="problem=17" class="info"><span>Go to problem 17 (Unsolved):<br>&quot;Number letter counts&quot;</span><img src="images/icon_back.png" alt="Previous" /></a></div></td>
+<td><div id="next_problem"><a href="problem=19" class="info"><span>Go to problem 19 (Unsolved):<br>&quot;Counting Sundays&quot;</span><img src="images/icon_next.png" alt="Next" /></a></div></td>
+</tr>
+</table>
+<div style="text-align:center;" class="print"><img src="images/print_page_logo.png" alt="projecteuler.net" style="border:none;" /></div>
+<h2>Maximum path sum I</h2><div style="float:right;"><span class="info"><a href="toggle_pin=18-0855c56628354348910b7a363d1cb9134ddb02c9"><img src="images/icon_unpinned.png"><span style="width:200px;right:0;top:30px;"><strong>Problem Unpinned</strong><br>Click to pin.<br><div class="small_notice">0/10 pins used.</div></span></a></span>&nbsp;&nbsp;&nbsp;<span class="info noprint"><img src="images/icon_info.png" style="width:18px;opacity:0.7;" /><span style="left:-450px;width:450px;top:30px;">Published on Friday, 31st May 2002, 06:00 pm; Solved by 135275;<br>Difficulty rating: 5%</span></div><div id="problem_info"><h3>Problem 18</h3></div>
+<div class="problem_content" role="problem">
+<p>By starting at the top of the triangle below and moving to adjacent numbers on the row below, the maximum total from top to bottom is 23.</p>
+<p style="text-align:center;font-family:'courier new';font-size:12pt;"><span style="color:#ff0000;"><b>3</b></span><br /><span style="color:#ff0000;"><b>7</b></span> 4<br />
+2 <span style="color:#ff0000;"><b>4</b></span> 6<br />
+8 5 <span style="color:#ff0000;"><b>9</b></span> 3</p>
+<p>That is, 3 + 7 + 4 + 9 = 23.</p>
+<p>Find the maximum total from top to bottom of the triangle below:</p>
+<p style="text-align:center;font-family:'courier new';">75<br />
+95 64<br />
+17 47 82<br />
+18 35 87 10<br />
+20 04 82 47 65<br />
+19 01 23 75 03 34<br />
+88 02 77 73 07 63 67<br />
+99 65 04 28 06 16 70 92<br />
+41 41 26 56 83 40 80 70 33<br />
+41 48 72 33 47 32 37 16 94 29<br />
+53 71 44 65 25 43 91 52 97 51 14<br />
+70 11 33 28 77 73 17 78 39 68 17 57<br />
+91 71 52 38 17 14 91 43 58 50 27 29 48<br />
+63 66 04 68 89 53 67 30 73 16 69 87 40 31<br />
+04 62 98 27 23 09 70 98 73 93 38 53 60 04 23</p>
+<p class="note"><b>NOTE:</b> As there are only 16384 routes, it is possible to solve this problem by trying every route. However, <a href="problem=67">Problem 67</a>, is the same challenge with a triangle containing one-hundred rows; it cannot be solved by brute force, and requires a clever method! ;o)</p>
+</div><br>
+<div style="text-align:center;" class="noprint">
+	<form name="form" method="post" action="problem=18">
+   	<table class="table_center">
+      <tr>
+      	<td><div style="text-align:right;">Answer:</div></td>
+      	<td style="text-align:left;">
+<div style="text-align:left;"><input size="20" type="text" name="guess_18" id="guess" maxlength="30" /></td></tr><tr><td colspan="2">               </td>
+            </tr>
+      <tr>
+      	<td><div style="text-align:right;">Confirmation Code:</div></td>
+      	<td><div style="text-align:left;"><input type="text" size="5" maxlength="5" autocomplete="off" id="captcha" name="captcha" /></div></td>
+      </tr>
+      <tr>
+         <td colspan="2">
+            <div style="text-align:center;font-size:80%;">
+            <img src="" id="captcha_image" onclick="update_image();document.getElementById('captcha').focus();" style="border:1px solid #999;width:136px;height:68px;" /><br>Click image for new code
+            </div>
+         </td>
+      </tr>
+      <tr>
+   	<td>&nbsp;</td><td style="text-align:left;"><input type="submit" value="Check" /></td>
+      </tr>
+      </table>
+	</form>
+</div>
+<script type="text/javascript">
+var image_timer;
+var image_time = 10 * 60 * 1000;
+function update_image() {
+   clearTimeout(image_timer);
+   document.getElementById('captcha_image').src='captcha/show_captcha.php?'+Math.random();
+   image_timer = setTimeout(update_image, image_time);
+}
+function clear_image() {
+   document.getElementById('captcha_image').src='images/spacer.gif';
+}
+update_image();
+document.getElementById('guess').focus();
+scroll(0,0);
+</script>
+</div>
+</div>
+
+<div id="footer" class="noprint">
+Project Euler: <a href="copyright">Copyright Information</a> | <a href="privacy">Privacy Policy</a>
+<!--/Creative Commons License--><!-- <rdf:RDF xmlns="http://web.resource.org/cc/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+   <Work rdf:about="">
+      <license rdf:resource="http://creativecommons.org/licenses/by-nc-sa/2.0/uk/" />
+   <dc:type rdf:resource="http://purl.org/dc/dcmitype/Text" />
+   </Work>
+   <License rdf:about="http://creativecommons.org/licenses/by-nc-sa/2.0/uk/"><permits rdf:resource="http://web.resource.org/cc/Reproduction"/><permits rdf:resource="http://web.resource.org/cc/Distribution"/><requires rdf:resource="http://web.resource.org/cc/Notice"/><requires rdf:resource="http://web.resource.org/cc/Attribution"/><prohibits rdf:resource="http://web.resource.org/cc/CommercialUse"/><permits rdf:resource="http://web.resource.org/cc/DerivativeWorks"/><requires rdf:resource="http://web.resource.org/cc/ShareAlike"/></License></rdf:RDF> -->
+</div>
+<script>
+function toggle_menu_collapse() {
+   var obj = document.getElementById("navigation");
+   if (obj.className === "nav") {
+      obj.className += " responsive";
+   } else {
+      obj.className = "nav";
+   }
+}
+</script>
+
+</body>
+</html>
